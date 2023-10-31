@@ -26,9 +26,11 @@
     <!-- Checkout Form Card -->
     <mat-card class="form-card">
       <mat-card-content>
-        <h3 class="card-title">Sign UP for free</h3>
+        <div  id="title">
+        <h1 class="card-title"  style="color: brown;font-weight: 500;">Sign UP for free</h1>
+        <h2 class="card-title">No credit card required</h2>
         <!-- Add Angular Material form controls here -->
-
+        </div>
         <!--  form  -->
 
         <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
@@ -300,25 +302,37 @@ type="tel"
 </div>
           <!-- <mat-checkbox class="mb-3">Keep me up to date on news</mat-checkbox> -->
           <!--  -->
-          <mat-divider></mat-divider>
-          <div
+          <!-- <mat-divider></mat-divider> -->
+          <!-- <div
   class="g-recaptcha"
   data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
   data-callback="onRecaptchaSuccess"
   data-expired-callback="onRecaptchaResponseExpiry"
   data-error-callback="onRecaptchaError"
 >
-</div>
-          <mat-divider></mat-divider>
-          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
+</div> -->
+<mat-divider></mat-divider>
+<div class="row">
+          <!-- <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2> -->
+          <div [hidden]="captcha">
+            <!-- <mat-card class="captcha-card"> -->
+              <!-- <p>Please enter the code below</p> -->
+              <re-captcha
+                (resolved)="resolved($event)"
+                siteKey="6LdWJeMoAAAAADVMts-U2KHKaeHEdiCwcsKfP7pp"
+              ></re-captcha>
+            <!-- </mat-card> -->
+          </div>
+          <div [hidden]="!captcha"></div>
 
+        </div>
           <mat-divider></mat-divider>
-          <re-captcha
+          <!-- <re-captcha
           (resolved)="onCaptchaResponse($event)"
           site_key="6LdWJeMoAAAAADVMts-U2KHKaeHEdiCwcsKfP7pp"
-          ></re-captcha>
+          ></re-captcha> -->
           <!-- <mat-checkbox class="mb-3">Save this address</mat-checkbox> -->
-          <mat-divider></mat-divider>
+          <!-- <mat-divider></mat-divider> -->
 
           <!-- <recaptcha-container [siteKey]="yourSiteKey"></recaptcha-container> -->
 

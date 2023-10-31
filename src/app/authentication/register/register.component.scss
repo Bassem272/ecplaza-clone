@@ -28,6 +28,14 @@
 //   background-color: red($color: #000000);
 //   border: 1px solid blue;
 //   /* You ca{
+
+  #title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
 .checkout-card{
   display:flex;
   align-items: center;
@@ -36,7 +44,7 @@
   align-items: center;
 }
 .form-card{
-  background-color: rgb(255, 250, 254);
+  background-color:#ffffff;
 // width:600px;
 width:fit-content;
 // max-width: 500;
@@ -108,5 +116,9 @@ width: fit-content;
   width:fit-content
 }
 re-captcha{
-  border: solid black;
+  // border: solid rgb(255, 255, 255);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFAFE;
 }

@@ -34,7 +34,31 @@ export class RegisterComponent implements OnInit {
   // siteKey: string | undefined;
   // this.siteKey = "your-actual-site-key";
 siteKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
-  ngOnInit(): void {
+
+
+// ------------ one section?++++++++++++++++++++++++++++
+captcha:string;
+email:string;
+resolved(captchaResponse:string){
+  this.captcha=captchaResponse;
+  console.log("resolved witht the response"+ captchaResponse);
+
+}
+
+
+public isCaptchaValidated: boolean = false;
+
+
+//   @ViewChild(ReCaptchaComponent)
+//   captcha!: ReCaptchaComponent;
+
+// onCaptchaResponse(event: any) {
+//   this.isCaptchaValidated = true;
+// }
+
+// ------------?++++++++++++++++++++++++++++
+
+ngOnInit(): void {
     const inputElement = document.querySelector('#phone');
     if (inputElement) {
       intlTelInput(inputElement, {
@@ -54,6 +78,9 @@ siteKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
     private formBuilder: FormBuilder,
     private router: Router
   ) {
+
+    this.captcha = '';
+    this.email='aabassadkfdsafdkajskdj';
 
 
     this.checkoutForm = this.formBuilder.group({
@@ -132,14 +159,5 @@ siteKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
   selectedValue: string | undefined;
   selectedCar: string | undefined;
-// ------------?++++++++++++++++++++++++++++
-public isCaptchaValidated: boolean = false;
 
-
-  @ViewChild(ReCaptchaComponent)
-  captcha!: ReCaptchaComponent;
-
-onCaptchaResponse(event: any) {
-  this.isCaptchaValidated = true;
-}
 }
