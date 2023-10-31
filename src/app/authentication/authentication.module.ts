@@ -1,4 +1,8 @@
-import { NgModule , CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import {
+  NgModule,
+  CUSTOM_ELEMENTS_SCHEMA,
+  NO_ERRORS_SCHEMA,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
@@ -42,8 +46,9 @@ import { RecaptchaModule } from 'ng-recaptcha';
     MatInputModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatCardModule,RecaptchaModule,
-   
+    MatCardModule,
+    RecaptchaModule,
+
     MatCheckboxModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -70,7 +75,9 @@ import { RecaptchaModule } from 'ng-recaptcha';
     MatDividerModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatPaginatorModule,  NgxIntlTelInputModule,
-  ], schemas: [NO_ERRORS_SCHEMA],
+    MatPaginatorModule,
+    NgxIntlTelInputModule,
+  ],
+  schemas: [NO_ERRORS_SCHEMA],
 })
 export class AuthenticationModule {}

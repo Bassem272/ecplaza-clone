@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {NgxMatDrmCountriesFlagsModule} from 'ngx-mat-drm-countries-flags';
 // import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
@@ -23,7 +22,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AuthenticationModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatSelectModule,RecaptchaModule,
+    MatSelectModule,
+    RecaptchaModule,
     // NgxMatDrmCountriesFlagsModule,
     MatCheckboxModule,
     NgxIntlTelInputModule,
