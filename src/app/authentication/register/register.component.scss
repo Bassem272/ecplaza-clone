@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
+
   }
 .checkout-card{
   display:flex;
@@ -115,10 +115,128 @@ width: fit-content;
 .float-end{
   width:fit-content
 }
+.captcha,.acp{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;;
+}
 re-captcha{
   // border: solid rgb(255, 255, 255);
   display:flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFFAFE;
+    background-color: #ffffff;
+  width:fit-content;
+  overflow: no;
 }
+////????????????????????????????????????/
+///
+///
+
+/* Responsive styles for screens 650px or narrower */
+@media (max-width: 400px) {
+  #mccontent{
+    width: 100vw;
+    padding: 0;
+    margin:0;
+    background-color: rgb(255, 255, 255);
+
+  }
+  .checkout-card,.form{
+    position: relative;
+    // left:0;
+    // right:0;
+    max-width: none; /* Remove the max-width */
+  margin:0;
+    width: 100vw; /* Make it full-width on small screens */
+    // padding: 10px; /* Increase padding for better spacing */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:0;
+  }
+  .form-card{
+    width: 100vw;
+    padding: 0;
+    margin:0;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .form-card {
+    position: relative;
+    // left:0;
+    // right:0;
+    max-width: none; /* Remove the max-width */
+  margin:0;
+    width: 100vw; /* Make it full-width on small screens */
+    // padding: 10px; /* Increase padding for better spacing */
+    display:flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    // height:100vh;
+  }
+
+  /* Additional responsive styles */
+  #title {
+    font-size: 20px; /* Increase font size for better readability */
+  }
+
+  .checkout-card {
+    min-width: 90vw; /* Wider card on small screens */
+  }
+
+  .col-md-6 {
+    width: 80vw;
+    position: relative;
+    font-size: smaller;
+
+    // left:2px;
+
+
+    /* Full width for form columns */
+  }
+
+  .radio {
+    width: 80vw;
+    /* Full width for radio buttons */
+  }
+
+  .row {
+    width: 90vw;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;/* Full width for rows */
+  }
+
+  #register-btn {
+    width: 100%; /* Full width for the "Sign Up" button */
+  }
+
+  .captcha,.acp{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex-direction: column;
+    position: relative;;
+    // overflow:none;
+    // padding-left: 40px;
+  }
+  re-captcha{
+    // border: solid rgb(255, 255, 255);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+      background-color: #ffffff;
+    width:fit-content;
+    overflow: no;
+
+  }
+}
+
+

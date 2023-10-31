@@ -1,11 +1,11 @@
-<p>register works!</p>
+
 <app-header></app-header>
 <mat-card class="checkout-card">
-  <mat-card-content>
+  <!-- <mat-card-content> -->
     <h2>Create an account for free</h2>
 
     <!-- User Registration Card -->
-    <mat-card class="user-card">
+    <!-- <mat-card class="user-card">
       <mat-card-content>
         <h3>Have an account?</h3>
         <p class="mb-0">
@@ -21,19 +21,20 @@
           Sign in
         </button>
       </mat-card-actions>
-    </mat-card>
+    </mat-card> -->
 
     <!-- Checkout Form Card -->
     <mat-card class="form-card">
-      <mat-card-content>
+      <mat-card-content id="mccontent">
         <div  id="title">
-        <h1 class="card-title"  style="color: brown;font-weight: 500;">Sign UP for free</h1>
+        <h1 class="card-title"  style="color: rgb(168, 9, 9);font-weight: 500;">
+          Create an account for free</h1>
         <h2 class="card-title">No credit card required</h2>
         <!-- Add Angular Material form controls here -->
         </div>
         <!--  form  -->
 
-        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <form class="form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
           <!-- 1 -->
           <!-- <div class="col-md-6">
             <mat-form-field class="full-width">
@@ -235,6 +236,7 @@ type="tel"
                   <input
                     matInput
                     id="password"
+                    type="password"
                     placeholder="example@gmail.com"
                     formControlName="password"
                   />
@@ -253,30 +255,26 @@ type="tel"
                   >
                 </mat-form-field>
               </div>
-            <div class="col-md-6">
-              <mat-form-field class="full-width">
-                <mat-label for="confirmPassword">Confirm Password</mat-label>
-                <input
-                  matInput
-                  id="confirm Password"
-                  placeholder="example@gmail.com"
-                  formControlName="confirmPassword"
-                />
-                <mat-error
-                  *ngIf="checkoutForm.get('confirmPassword')?.hasError('pattern')"
-                >
-                  not correct confirmed Password format
-                </mat-error>
-                <mat-error
-                  *ngIf="checkoutForm.get('confirmPassword')?.hasError('required')"
-                >
-                  confirm Password </mat-error
-                >
-                <mat-error *ngIf="checkoutForm.get('confirmPassword')?.hasError('confirmPassword')"
-                  >Invalid  Password format.</mat-error
-                >
-              </mat-form-field>
-            </div>
+
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <mat-label for="confirmPassword">Confirm Password</mat-label>
+                  <input
+                    matInput
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    formControlName="confirmPassword"
+                  />
+                  <mat-error *ngIf="checkoutForm.get('confirmPassword')?.hasError('required')">
+                    Password Confirmation is required.
+                  </mat-error>
+                  <!-- <mat-error *ngIf="checkoutForm.hasError('mismatch')">Passwords do not match. -->
+                    <mat-error *ngIf="checkoutForm.hasError('mismatch')">Passwords do not match.
+                    </mat-error>
+
+                </mat-form-field>
+              </div>
           </div>
                      <!-- 7 -->
                      <div class="row">
@@ -312,9 +310,9 @@ type="tel"
 >
 </div> -->
 <mat-divider></mat-divider>
-<div class="row">
+<div class="row captcha">
           <!-- <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2> -->
-          <div [hidden]="captcha">
+          <div  class="acp" [hidden]="captcha">
             <!-- <mat-card class="captcha-card"> -->
               <!-- <p>Please enter the code below</p> -->
               <re-captcha
@@ -341,7 +339,9 @@ type="tel"
           <div class="row">
           <!-- <div class="float-end"> -->
             <!-- <button mat-stroked-button color="warn">Cancel</button> -->
-            <button id="register-btn" mat-raised-button color="primary">Sign Up</button>
+            <button id="register-btn" mat-raised-button color="primary" [disabled]="!isCaptchaClicked">Sign Up</button>
+
+
           <!-- </div> -->
         </div>
         </form>
@@ -349,7 +349,7 @@ type="tel"
         <!--    -->
       </mat-card-content>
     </mat-card>
-  </mat-card-content>
+  <!-- </mat-card-content> -->
 </mat-card>
 
 <app-footer></app-footer>

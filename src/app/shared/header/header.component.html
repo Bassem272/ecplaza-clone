@@ -1,9 +1,9 @@
-<p>header works!</p>
+
 <!-- <p>header works!</p> -->
 
 <mat-toolbar color="primary">
   <div class="inner">
- <span mat-icon-button routerLink="/user/home" >My Art Gallery</span>
+ <span mat-icon-button routerLink="/user/home" >Header</span>
 
   <!-- Home Button -->
   <button  id="btnh" mat-icon-button routerLink="/user/home" routerLinkActive="active">
@@ -11,9 +11,9 @@
   </button>
 
   <!-- Profile Button -->
-  <button id="btnh" mat-icon-button routerLink="/user/profile" routerLinkActive="active">
+  <!-- <button id="btnh" mat-icon-button routerLink="/user/profile" routerLinkActive="active">
     <span>Profile </span><mat-icon>person</mat-icon>
-  </button>
+  </button> -->
 
   <!-- Products Button -->
   <!-- <button id="btnh" mat-icon-button routerLink="/user/products" routerLinkActive="active">
@@ -25,7 +25,7 @@
     <span>Cart </span><mat-icon>shopping_cart</mat-icon>
   </button> -->
 
-  <div class="spacer"></div>
+  <!-- <div class="spacer"></div> -->
 
   <!-- <button id="btnh" mat-icon-button routerLink="/auth/admin-login" routerLinkActive="active">
     <span>Home </span><mat-icon>shopping_cart</mat-icon>
@@ -39,14 +39,14 @@
   </ng-container> -->
 
   <!-- Show these buttons when the user is logged out -->
-  <ng-template #loggedOutButtons>
-    <!-- Login Button -->
+  <!-- <ng-template #loggedOutButtons>
+    Login Button
     <button id="btnh" mat-icon-button routerLink="/auth/login">
      Login<mat-icon>login</mat-icon>
     </button>
     <button id="btnh" mat-icon-button routerLink="/auth/admin-login" routerLinkActive="active">
       Admin<mat-icon>login</mat-icon>
     </button>
-  </ng-template>
+  </ng-template> -->
 </div>
 </mat-toolbar>

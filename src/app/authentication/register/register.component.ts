@@ -5,7 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import * as intlTelInput from 'intl-tel-input';
@@ -22,6 +22,20 @@ import { ReCaptchaV3Service } from '../../../../node_modules/ngx-captcha/ngx-cap
 import { RecaptchaModule } from 'ng-recaptcha/lib/recaptcha.module';
 // import { ReCaptchaV3Response } from '../../../../node_modules/ngx-captcha/lib/captcha-v3
 
+import { AbstractControl, ValidatorFn } from '@angular/forms';
+
+import {  ValidationErrors } from '@angular/forms';
+import { of, Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+
+import { matchPasswordAsync } from './confirm-password';
+
+
+
+
+
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -36,17 +50,20 @@ export class RegisterComponent implements OnInit {
 siteKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
 
-// ------------ one section?++++++++++++++++++++++++++++
+// ------------ one captcha section?++++++++++++++++++++++++++++
 captcha:string;
 email:string;
+public isCaptchaClicked : boolean= false;
+
 resolved(captchaResponse:string){
   this.captcha=captchaResponse;
   console.log("resolved witht the response"+ captchaResponse);
+  this.isCaptchaClicked = true;
 
 }
 
+ isCaptchaValidated = false;
 
-public isCaptchaValidated: boolean = false;
 
 
 //   @ViewChild(ReCaptchaComponent)
@@ -56,7 +73,28 @@ public isCaptchaValidated: boolean = false;
 //   this.isCaptchaValidated = true;
 // }
 
-// ------------?++++++++++++++++++++++++++++
+// ------------?+++++ confirm password section+++++++++++++++++++++++
+// name = 'Angular ' + VERSION.major;
+//   passwordsMatching = false;
+//   isConfirmPasswordDirty = false;
+//   confirmPasswordClass = 'form-control';
+//   newPassword = new FormControl(null, [
+//     (c: AbstractControl) => Validators.required(c),
+//     Validators.pattern(
+//       /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/
+//     ),
+//   ]);
+//   confirmPassword = new FormControl(null, [
+//     (c: AbstractControl) => Validators.required(c),
+//     Validators.pattern(
+//       /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/
+//     ),
+//   ]);
+
+
+
+
+
 
 ngOnInit(): void {
     const inputElement = document.querySelector('#phone');
@@ -69,6 +107,14 @@ ngOnInit(): void {
       });
     }
   }
+
+  passwordsMatchValidator(control: FormGroup) {
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('confirmPassword')?.value;
+
+    return password === confirmPassword ? null : { mismatch: true };
+  }
+
 
   checkoutForm: FormGroup;
 
@@ -99,7 +145,10 @@ ngOnInit(): void {
       country: ['', Validators.required],
       phone: ['', Validators.required],
       password:['',Validators.required],
-      confirmPassword:['',Validators.required],
+      // confirmPassword: ['',  [Validators.required, this.passwordsMatchValidator]]
+      confirmPassword: ['', [Validators.required], matchPasswordAsync]
+
+      ,
       companyName: [''],
       userType: ['', Validators.required],
       userRole: ['', Validators.required],
@@ -112,8 +161,30 @@ ngOnInit(): void {
       zip: [''],
       message: [''],
       // recaptcha: ['', [Validators.required], [this.ReCaptchaV3Service.validate()]]
+    },{
+      validator: this.ConfirmedValidator('password', 'confirmPassword')
     });
+
+
+
   }
+
+
+  ConfirmedValidator(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+      if (matchingControl.errors && !matchingControl.errors['confirmedValidator']) {
+        return;
+      }
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ confirmedValidator: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    };
+  }
+
   onSubmit(): void {
     console.log('Submit');
 
