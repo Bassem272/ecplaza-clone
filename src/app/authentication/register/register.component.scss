@@ -157,13 +157,14 @@ re-captcha{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:0;
+    padding:0;margin-bottom: 20px;
   }
   .form-card{
     width: 100vw;
     padding: 0;
     margin:0;
     background-color: rgb(255, 255, 255);
+
   }
 
   .form-card {
@@ -239,4 +240,25 @@ re-captcha{
   }
 }
 
+.error-messages{
+  color:red;
+  font-size: 15px;
+  width:33vw;
+  background-color: rgb(249, 249, 249);
 
+}
+.error-card{
+  width:100vw;
+  border-radius: 10px;
+  color:black;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px rgba(205, 216, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
