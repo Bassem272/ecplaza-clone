@@ -1,0 +1,112 @@
+.mat-select-panel {
+  max-height: 200px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+
+
+#phone{
+  flex-flow: column;
+  overflow-y: visible;
+  width: 212px;
+  height: 56px;
+  border-bottom: solid 1px #989292;
+  border-top: 0px ;
+  border-left: 0px ;
+  border-right: 0px ;
+  background-color: #ECECEC;
+}
+#phone:active{
+  border-bottom: solid 1px #989292;
+  border-top: 1px white;
+  border-left: 0px ;
+  border-right: 0px ;
+  background-color: #ECECEC;
+  background-color: red;
+
+}
+// input[type="tel"]:focus {
+//   background-color: red($color: #000000);
+//   border: 1px solid blue;
+//   /* You ca{
+.checkout-card{
+  display:flex;
+  align-items: center;
+  min-width:30vw;
+  justify-content: center;
+  align-items: center;
+}
+.form-card{
+  background-color: rgb(255, 250, 254);
+// width:600px;
+width:fit-content;
+// max-width: 500;
+
+position: relative;
+display : grid;
+font-size: 16px;
+box-shadow: 0 0 3px 3px rgba(134, 136, 245, 0.2);
+padding:5px 5px 5px 5px;
+// grid-template-rows: 1fr 1fr ;
+// grid-template-rows: 1fr 1fr 1fr 1fr;
+// grid-row: 600px;
+
+;
+
+}
+.col-md-6{
+background-color: rgb(255, 255, 255);
+width: fit-content;
+
+}
+.radio{
+  justify-content: space-around;
+  display:flex;
+
+  background-color: rgb(255, 255, 255);
+  width: 387px;
+}
+.row{
+  margin: 10px;
+  display:  ruby;
+  width:480px;
+
+  display:flex;
+  justify-content: center;
+
+
+}
+#rado{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#rado2{
+  display:flex;
+  justify-content:space-between ;
+  align-items: center;
+  width: 4750px;
+}
+#label
+{
+  width: 80px;
+  background-color: rgb(255, 255, 255);
+}
+// #register-btn{
+//   width:relative;
+//   border-radius: 15px;
+
+// }
+#register-btn{
+  width:480px;
+  border-radius: 25px;
+  height: 50px;
+  font-size: large;
+
+
+}
+.float-end{
+  width:fit-content
+}
+re-captcha{
+  border: solid black;
+}

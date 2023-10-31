@@ -1,1 +1,341 @@
 <p>register works!</p>
+<app-header></app-header>
+<mat-card class="checkout-card">
+  <mat-card-content>
+    <h2>Create an account for free</h2>
+
+    <!-- User Registration Card -->
+    <mat-card class="user-card">
+      <mat-card-content>
+        <h3>Have an account?</h3>
+        <p class="mb-0">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" routerLink="/auth/register">
+          Register
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-raised-button color="primary" routerLink="/auth/login">
+          Sign in
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Checkout Form Card -->
+    <mat-card class="form-card">
+      <mat-card-content>
+        <h3 class="card-title">Sign UP for free</h3>
+        <!-- Add Angular Material form controls here -->
+
+        <!--  form  -->
+
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+          <!-- 1 -->
+          <!-- <div class="col-md-6">
+            <mat-form-field class="full-width">
+              <mat-label for="firstName">First name</mat-label>
+              <input
+                matInput
+                id="firstName"
+                placeholder="Type here"
+                formControlName="firstName"
+                [ngClass]="{'error-border': checkoutForm.get('firstName')?.invalid && checkoutForm.get('firstName')?.touched}"
+              />
+              <mat-error *ngIf="checkoutForm.get('firstName')?.hasError('required')">
+                First name is required
+              </mat-error>
+            </mat-form-field>
+          </div> -->
+          <!--  1 -->
+<!--
+          <div class="col-md-6 phone">
+           <mat-form-field
+              class="full-width phone"> -->
+          <!-- <mat-label for="phone">tel</mat-label> -->
+
+          <!-- <input
+              matInput
+
+type="tel"
+                id="phone"
+
+                placeholder="Type here"
+                formControlName="tel"
+              />
+              <mat-error
+                *ngIf="checkoutForm.get('firstName')?.hasError('required')"
+              >
+                phone is required</mat-error
+              > -->
+           <!-- - </mat-form-field>-->
+ <!-- </div> -->
+          <div class="row">
+
+
+            <!--  2 -->
+
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label for="firstName">First name</mat-label>
+                <input
+                  matInput
+                  id="firstName"
+                  placeholder="Type here"
+                  formControlName="firstName"
+                />
+                <mat-error
+                  *ngIf="checkoutForm.get('firstName')?.hasError('required')"
+                >
+                  fist name is required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <!--  -->
+
+            <!--  3 -->
+
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label for="lastName">Last name</mat-label>
+                <input
+                  matInput
+                  id="lastName"
+                  placeholder="Type here"
+                  formControlName="lastName"
+                />
+                <mat-error
+                  *ngIf="checkoutForm.get('lastName')?.hasError('required')"
+                >
+                  last name is required</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <!--  -->
+          </div>
+            <!--  4 -->
+            <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label for="phone1">phone</mat-label>
+                <input
+                  matInput
+                  id="phone1"
+                  placeholder="Type here"
+                  formControlName="phone"
+                />
+                <mat-error
+                  *ngIf="checkoutForm.get('phone')?.hasError('required')"
+                >
+                  phone is required</mat-error
+                >
+              </mat-form-field>
+            </div>
+
+            <!--  5 -->
+
+            <!-- select country name="country" -->
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label for="country" >country</mat-label>
+                <mat-select
+
+                  id="country"
+                  formControlName="country"
+                >
+                  <mat-option value="">choose a country</mat-option>
+                  <mat-option
+                    *ngFor="let country of countries"
+                    [value]="country.name"
+                  >
+                    {{ country.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+                   <!--  6 -->
+                   <div class="row">
+            <!--  -->
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label for="email">email</mat-label>
+                <input
+                  matInput
+                  id="email"
+                  placeholder="example@gmail.com"
+                  formControlName="email"
+                />
+                <mat-error
+                  *ngIf="checkoutForm.get('email')?.hasError('pattern')"
+                >
+                  not correct email format
+                </mat-error>
+                <mat-error
+                  *ngIf="checkoutForm.get('email')?.hasError('required')"
+                >
+                  email is required</mat-error
+                >
+                <mat-error *ngIf="checkoutForm.get('email')?.hasError('email')"
+                  >Invalid email format.</mat-error
+                >
+              </mat-form-field>
+            </div>
+          <!-- </div> -->
+
+                   <!--  6.1 -->
+                   <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                      <mat-label for="companyName">Company Name</mat-label>
+                      <input
+                        matInput
+                        id="companyName"
+                        placeholder="Company Name"
+                        formControlName="companyName"
+                      />
+                      <!-- <mat-error
+                        *ngIf="checkoutForm.get('companyName')?.hasError('pattern')"
+                      >
+                        not correct Company Name format
+                      </mat-error>
+                      <mat-error
+                        *ngIf="checkoutForm.get('companyName')?.hasError('required')"
+                      >
+                        Company Name is required</mat-error
+                      >
+                      <mat-error *ngIf="checkoutForm.get('companyName')?.hasError('companyName')"
+                        >Invalid Company Name format.</mat-error >-->
+
+                    </mat-form-field>
+                  </div>
+            <!--  -->
+
+               <!--  6.1 -->
+              </div>
+              <!-- company name -->
+              <div class="row">
+                <!--  -->
+
+              <!-- </div> -->
+
+                       <!--  6.1 -->
+
+                <!--  -->
+
+                   <!--  6.1 -->
+                  </div>
+            <!--  -->
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <mat-label for="email">Password</mat-label>
+                  <input
+                    matInput
+                    id="password"
+                    placeholder="example@gmail.com"
+                    formControlName="password"
+                  />
+                  <mat-error
+                    *ngIf="checkoutForm.get('password')?.hasError('pattern')"
+                  >
+                    not correct password format
+                  </mat-error>
+                  <mat-error
+                    *ngIf="checkoutForm.get('password')?.hasError('required')"
+                  >
+                    password is required</mat-error
+                  >
+                  <mat-error *ngIf="checkoutForm.get('password')?.hasError('password')"
+                    >Invalid password format.</mat-error
+                  >
+                </mat-form-field>
+              </div>
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <mat-label for="confirmPassword">Confirm Password</mat-label>
+                <input
+                  matInput
+                  id="confirm Password"
+                  placeholder="example@gmail.com"
+                  formControlName="confirmPassword"
+                />
+                <mat-error
+                  *ngIf="checkoutForm.get('confirmPassword')?.hasError('pattern')"
+                >
+                  not correct confirmed Password format
+                </mat-error>
+                <mat-error
+                  *ngIf="checkoutForm.get('confirmPassword')?.hasError('required')"
+                >
+                  confirm Password </mat-error
+                >
+                <mat-error *ngIf="checkoutForm.get('confirmPassword')?.hasError('confirmPassword')"
+                  >Invalid  Password format.</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+                     <!-- 7 -->
+                     <div class="row">
+          <div class="col-md-6" id="rado">
+            <mat-label id="label">I am a</mat-label>
+            <mat-radio-group class="radio" formControlName="userRole">
+              <mat-radio-button value="buyer">Buyer</mat-radio-button>
+              <mat-radio-button value="seller">Seller</mat-radio-button>
+              <mat-radio-button value="both">Both</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+                           <!-- 8 -->
+                           <div class="row">
+   <div class="col-md-6" id="rado2">
+    <mat-label id="label">User Type</mat-label>
+    <mat-radio-group class="radio" formControlName="userType">
+      <mat-radio-button value="corporate">Corporate</mat-radio-button>
+      <mat-radio-button value="individual">Individual</mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+</div>
+          <!-- <mat-checkbox class="mb-3">Keep me up to date on news</mat-checkbox> -->
+          <!--  -->
+          <mat-divider></mat-divider>
+          <div
+  class="g-recaptcha"
+  data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  data-callback="onRecaptchaSuccess"
+  data-expired-callback="onRecaptchaResponseExpiry"
+  data-error-callback="onRecaptchaError"
+>
+</div>
+          <mat-divider></mat-divider>
+          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
+
+          <mat-divider></mat-divider>
+          <re-captcha
+          (resolved)="onCaptchaResponse($event)"
+          site_key="6LdWJeMoAAAAADVMts-U2KHKaeHEdiCwcsKfP7pp"
+          ></re-captcha>
+          <!-- <mat-checkbox class="mb-3">Save this address</mat-checkbox> -->
+          <mat-divider></mat-divider>
+
+          <!-- <recaptcha-container [siteKey]="yourSiteKey"></recaptcha-container> -->
+
+          <!-- <button type="submit" [disabled]="registrationForm.invalid">Register</button>[disabled]="checkoutForm.invalid" -->
+          <!-- <button id="register-btn" type="submit" >Register</button> -->
+          <div class="row">
+          <!-- <div class="float-end"> -->
+            <!-- <button mat-stroked-button color="warn">Cancel</button> -->
+            <button id="register-btn" mat-raised-button color="primary">Sign Up</button>
+          <!-- </div> -->
+        </div>
+        </form>
+
+        <!--    -->
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
+
+<app-footer></app-footer>

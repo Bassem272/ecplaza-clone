@@ -5,18 +5,39 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
+import { FormsModule } from '@angular/forms';
+
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    HeaderComponent
-  ],
+  declarations: [FooterComponent, HeaderComponent],
   imports: [
     CommonModule,
-    SharedRoutingModule
-  ],exports:[
-FooterComponent,
-HeaderComponent
+    SharedRoutingModule,
+    MatExpansionModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FontAwesomeModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatListModule,
   ],
+  exports: [FooterComponent, HeaderComponent],
 })
-export class SharedModule { }
+export class SharedModule {}
