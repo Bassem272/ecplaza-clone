@@ -3,27 +3,49 @@
   overflow-y: auto;
 }
 
-
-#phone{
-  flex-flow: column;
-  overflow-y: visible;
+.food{
+  display: flex;
+  flex-flow: row;
   width: 212px;
   height: 56px;
-  border-bottom: solid 1px #989292;
+  border-bottom: solid 1px rgb(141, 131, 131);
   border-top: 0px ;
   border-left: 0px ;
   border-right: 0px ;
-  background-color: #ECECEC;
+  background-color: #F5F5F5;
+  // z-index: 1000;
 }
-#phone:active{
+// .phone-input {
+//   width: 100%;
+//   position: relative; /* Make the container relative for absolute positioning of the dropdown */
+// }
+// input,mat-input-element{
+//   background-color: aqua;
+// }
+#phone1{
+  flex-flow: column;
+  overflow-y: visible;
+  // width: 220px;
+  // height: 56px;
+  // border-bottom: solid 1px rgb(141, 131, 131);
+  border-top: 0px ;
+  border-left: 0px ;
+  border-right: 0px ;
+  // background-color: #F5F5F5
+  // ;z-index: 100;
+}
+#phone1:active{
   border-bottom: solid 1px #989292;
   border-top: 1px white;
   border-left: 0px ;
   border-right: 0px ;
   background-color: #ECECEC;
-  background-color: red;
+  // background-color: red;
 
 }
+// #phone1:focus{
+
+// border: 1px solid aqua;}
 // input[type="tel"]:focus {
 //   background-color: red($color: #000000);
 //   border: 1px solid blue;
@@ -36,14 +58,19 @@
     flex-direction: column;
 
   }
-.checkout-card{
+  // the main container
+  .container{
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display:flex;
   align-items: center;
   min-width:30vw;
   justify-content: center;
   align-items: center;
+  background-color: #F3F2EF;
 }
 .form-card{
+  // font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
   background-color:#ffffff;
 // width:600px;
 width:fit-content;
@@ -145,7 +172,7 @@ re-captcha{
     background-color: rgb(255, 255, 255);
 
   }
-  .checkout-card,.form{
+  .container,.form{
     position: relative;
     // left:0;
     // right:0;
@@ -187,7 +214,7 @@ re-captcha{
     font-size: 20px; /* Increase font size for better readability */
   }
 
-  .checkout-card {
+  .container {
     min-width: 90vw; /* Wider card on small screens */
   }
 
@@ -250,7 +277,7 @@ re-captcha{
 .error-card{
   width:100vw;
   border-radius: 10px;
-  color:black;
+  color:rgb(211, 49, 49);
   border-radius: 10px;
   box-shadow: 0 0 3px 3px rgba(205, 216, 255, 0.2);
   display: flex;

@@ -36,6 +36,8 @@ import { Register2Component } from './register2/register2.component';
 import { Register3Component } from './register3/register3.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 
+// import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input';
+
 @NgModule({
   declarations: [RegisterComponent, Register2Component, Register3Component],
   imports: [

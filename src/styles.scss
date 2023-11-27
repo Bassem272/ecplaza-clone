@@ -1,6 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 /* styles.css */
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
-html, body { height: 100%;
+html, body {
+
+  height: 100%;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+   margin: 0;
+    // font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: monospace;
+    background-color: #F3F2EF;
+   }
+/* Add this to your component's styles or global styles */
+::ng-deep .mat-form-field-underline .mat-form-field-ripple {
+  z-index: 0; /* Set a lower z-index for the underline to avoid overlapping the dropdown panel */
+}
+
+::ng-deep .mat-select-panel {
+  z-index: 2; /* Set a higher z-index for the dropdown panel to make sure it appears above other elements */
+}

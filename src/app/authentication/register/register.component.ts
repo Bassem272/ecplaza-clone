@@ -142,26 +142,25 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*\(\)_\+{}\[\]:;<>,\.?~\\`/-])/
-            ),
+            // Validators.pattern(
+            //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*\(\)_\+{}\[\]:;<>,\.?~\\`/-])/
+            // ),
           ],
         ],
-        confirmPassword: ['', [Validators.required], matchPasswordAsync],
+        confirmPassword: ['', [Validators.required]],
         companyName: ['', Validators.required],
         userType: ['', Validators.required],
         userRole: ['', Validators.required],
         recaptcha: ['', [Validators.required]],
-        address: ['', Validators.required],
-        tel: ['', Validators.required],
 
-        // recaptcha: ['', [Validators.required], [this.ReCaptchaV3Service.validate()]]
+
       },
       {
         validator: this.ConfirmedValidator('password', 'confirmPassword'),
       }
-    );
-  }
+      );
+    }
+    // recaptcha: ['', [Validators.required], [this.ReCaptchaV3Service.validate()]]
 
   ConfirmedValidator(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
@@ -169,12 +168,12 @@ export class RegisterComponent implements OnInit {
       const matchingControl = formGroup.controls[matchingControlName];
       if (
         matchingControl.errors &&
-        !matchingControl.errors['confirmedValidator']
+        !matchingControl.errors['ConfirmedValidator']
       ) {
         return;
       }
       if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ confirmedValidator: true });
+        matchingControl.setErrors({ConfirmedValidator: true});
       } else {
         matchingControl.setErrors(null);
       }
@@ -210,18 +209,18 @@ export class RegisterComponent implements OnInit {
     CountryISO.UnitedStates,
     CountryISO.UnitedKingdom,
   ];
-  phoneForm = new FormGroup({
-    phone: new FormControl(undefined, [Validators.required]),
-  });
+  // phoneForm = new FormGroup({
+  //   phone: new FormControl(undefined, [Validators.required]),
+  // });
 
   changePreferredCountries() {
     this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   }
   // Create a form control instance
-  phoneControl = new FormControl();
-  myForm = new FormGroup({
-    phone: this.phoneControl,
-  });
+  // phoneControl = new FormControl();
+  // myForm = new FormGroup({
+  //   phone: this.phoneControl,
+  // });
   ///////======>>>>>
 
   selectedValue: string | undefined;
