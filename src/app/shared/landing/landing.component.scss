@@ -1,0 +1,1336 @@
+/* From https://css.glass */
+// background: rgba(255, 255, 255, 0.2);
+// border-radius: 16px;
+// box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+// backdrop-filter: blur(5px);
+// -webkit-backdrop-filter: blur(5px);
+// border: 1px solid rgba(255, 255, 255, 0.3);
+
+.header{
+  width:100vw;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  color:white;
+  background: rgba(255, 255, 255, 0.2);
+// border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+// github in the header
+.btn {
+  display: grid;
+  place-items: center;
+  background: #e3edf7;
+  // background: transparent;
+  padding: .4em;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+	      -6px -6px 10px -1px rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.btn:hover {
+  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+	      inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+	      -0.5px -0.5px 0px rgba(255,255,255,1),
+	      0.5px 0.5px 0px rgba(0,0,0,0.15),
+	      0px 12px 10px -10px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  transform: translateY(0.2em);
+}
+
+.btn svg {
+  transition: transform 0.5s;
+}
+
+.btn:hover svg {
+  transform: scale(0.9);
+  fill: #333333;
+}
+
+
+// three points for the header
+.wrapper {
+  position:absolute;
+  top:70%;
+  left:3%;
+  display: inline-flex;
+  list-style: none;
+  background-color: transparent;
+
+  // height: 2vh;
+  // width: 100vw;
+  // padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #fff;
+}
+
+
+
+@keyframes move {
+  100% {
+      transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #3E1E68;
+  overflow: hidden;
+}
+
+.background span {
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 20vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 45;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+  color: #FFACAC;
+  top: 11%;
+  left: 29%;
+  animation-duration: 51s;
+  animation-delay: -8s;
+  transform-origin: 22vw 10vh;
+  box-shadow: 40vmin 0 5.84498542843426vmin currentColor;
+}
+.background span:nth-child(1) {
+  color: #FFACAC;
+  top: 65%;
+  left: 42%;
+  animation-duration: 48s;
+  animation-delay: -17s;
+  transform-origin: 14vw 5vh;
+  box-shadow: 40vmin 0 5.325410249215861vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: #E45A84;
+  top: 12%;
+  left: 26%;
+  animation-duration: 8s;
+  animation-delay: -7s;
+  transform-origin: -18vw -17vh;
+  box-shadow: -40vmin 0 5.504908385886884vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: #583C87;
+  top: 63%;
+  left: 81%;
+  animation-duration: 49s;
+  animation-delay: -10s;
+  transform-origin: 0vw -18vh;
+  box-shadow: -40vmin 0 5.728324757466741vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #E45A84;
+  top: 46%;
+  left: 96%;
+  animation-duration: 8s;
+  animation-delay: -14s;
+  transform-origin: 1vw 8vh;
+  box-shadow: -40vmin 0 5.42323056451681vmin currentColor;
+}
+.background span:nth-child(5) {
+  color: #E45A84;
+  top: 98%;
+  left: 75%;
+  animation-duration: 23s;
+  animation-delay: -1s;
+  transform-origin: 0vw -4vh;
+  box-shadow: 40vmin 0 5.868080588211489vmin currentColor;
+}
+.background span:nth-child(6) {
+  color: #FFACAC;
+  top: 28%;
+  left: 82%;
+  animation-duration: 30s;
+  animation-delay: -43s;
+  transform-origin: -2vw -8vh;
+  box-shadow: 40vmin 0 5.984643083417677vmin currentColor;
+}
+.background span:nth-child(7) {
+  color: #583C87;
+  top: 14%;
+  left: 19%;
+  animation-duration: 25s;
+  animation-delay: -38s;
+  transform-origin: -14vw -6vh;
+  box-shadow: -40vmin 0 5.4150953308646805vmin currentColor;
+}
+.background span:nth-child(8) {
+  color: #583C87;
+  top: 63%;
+  left: 28%;
+  animation-duration: 40s;
+  animation-delay: -49s;
+  transform-origin: 0vw 10vh;
+  box-shadow: 40vmin 0 5.83249665569057vmin currentColor;
+}
+.background span:nth-child(9) {
+  color: #583C87;
+  top: 87%;
+  left: 71%;
+  animation-duration: 13s;
+  animation-delay: -27s;
+  transform-origin: -10vw 0vh;
+  box-shadow: 40vmin 0 5.267008837221919vmin currentColor;
+}
+.background span:nth-child(10) {
+  color: #583C87;
+  top: 76%;
+  left: 96%;
+  animation-duration: 44s;
+  animation-delay: -32s;
+  transform-origin: 22vw -12vh;
+  box-shadow: 40vmin 0 5.089431148066959vmin currentColor;
+}
+.background span:nth-child(11) {
+  color: #583C87;
+  top: 57%;
+  left: 31%;
+  animation-duration: 24s;
+  animation-delay: -8s;
+  transform-origin: 9vw -1vh;
+  box-shadow: -40vmin 0 5.789503462786465vmin currentColor;
+}
+.background span:nth-child(12) {
+  color: #FFACAC;
+  top: 40%;
+  left: 6%;
+  animation-duration: 7s;
+  animation-delay: -32s;
+  transform-origin: 14vw -10vh;
+  box-shadow: 40vmin 0 5.318114621326303vmin currentColor;
+}
+.background span:nth-child(13) {
+  color: #FFACAC;
+  top: 6%;
+  left: 69%;
+  animation-duration: 53s;
+  animation-delay: -49s;
+  transform-origin: 2vw 12vh;
+  box-shadow: -40vmin 0 5.14679385259556vmin currentColor;
+}
+.background span:nth-child(14) {
+  color: #FFACAC;
+  top: 71%;
+  left: 47%;
+  animation-duration: 24s;
+  animation-delay: -37s;
+  transform-origin: 5vw 7vh;
+  box-shadow: -40vmin 0 5.300221381669678vmin currentColor;
+}
+.background span:nth-child(15) {
+  color: #E45A84;
+  top: 60%;
+  left: 7%;
+  animation-duration: 22s;
+  animation-delay: -19s;
+  transform-origin: 5vw 7vh;
+  box-shadow: -40vmin 0 5.9449730845463895vmin currentColor;
+}
+.background span:nth-child(16) {
+  color: #FFACAC;
+  top: 33%;
+  left: 23%;
+  animation-duration: 48s;
+  animation-delay: -40s;
+  transform-origin: -8vw -1vh;
+  box-shadow: 40vmin 0 5.870459788666174vmin currentColor;
+}
+.background span:nth-child(17) {
+  color: #E45A84;
+  top: 95%;
+  left: 51%;
+  animation-duration: 36s;
+  animation-delay: -9s;
+  transform-origin: 14vw -22vh;
+  box-shadow: 40vmin 0 5.12332449189655vmin currentColor;
+}
+.background span:nth-child(18) {
+  color: #583C87;
+  top: 29%;
+  left: 90%;
+  animation-duration: 10s;
+  animation-delay: -16s;
+  transform-origin: -1vw 13vh;
+  box-shadow: 40vmin 0 5.321295248912676vmin currentColor;
+}
+.background span:nth-child(19) {
+  color: #FFACAC;
+  top: 88%;
+  left: 40%;
+  animation-duration: 44s;
+  animation-delay: -50s;
+  transform-origin: -2vw -22vh;
+  box-shadow: 40vmin 0 5.818229637441115vmin currentColor;
+}
+  //..............>>>>>>> other divs
+  //mat card
+  .pig-card{
+    position: absolute;
+    display:flexbox;
+    flex-direction: row;
+    // flex-grow: 1;
+    height:120px;    gap: 30px;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    // flex-flow: wrap;
+    top:60%;
+    left: 25%;
+    background-color:transparent;
+    // width: 800px;
+    // height: fit-content;
+  }
+  .textop {
+    // max-width: 100px;
+// height:120px;
+ position: absolute;
+    color:rgb(236, 227, 227);
+    top: 20%;
+    left: 5%;
+    font-size: 3.6vw;
+    line-height: 1.3;
+    width:50%;
+    // transform: translate(0%, 0%);
+    z-index: 2;
+    background-color: transparent;
+
+  //   background: linear-gradient(
+  //   50deg,
+  //   rgba(255, 255, 255, 0.4) 12%,
+  //   rgba(255, 255, 255, 0.1) 77%
+  // );
+  // background-blend-mode: ;
+  box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  }
+
+  // what is the color of the number?
+  .your-text-class {
+    color: #66c2ff; /* Light blue text */
+    font-size: 24px;
+    font-weight: 300; /* Lighter font weight */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .num{
+    // color: #dcdcdc; /* Light gray text */
+    // font-size: 20px;
+    // font-weight: normal;
+    // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #fafafa; /* Light blue text */
+    font-size: 24px;
+    font-weight: 300; /* Lighter font weight */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+.clients{
+  color: #c9c9c9; /* Bright green text */
+  font-size: 20px;
+  font-weight: 600; /* Increased font weight */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+   //mat card
+   .example-card1 {
+    max-width: 8vw;
+height:10vw;    // position: absolute;
+    color:blue;
+    // top: 65%;
+    // left: 50%;
+    // transform: translate(0%, 0%);
+    z-index: 2;
+    background:transparent;
+  //   linear-gradient(
+  //   50deg,
+  //   rgba(255, 255, 255, 0.4) 12%,
+  //   rgba(255, 255, 255, 0.1) 77%
+  // );
+  // background-blend-mode: ;
+  box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  }
+
+   //mat card
+   .example-card2 {
+    max-width: 8vw;
+height:10vw;     // position: absolute;
+    color:rgb(220, 27, 27);
+    // top: 65%;
+    // left:40%;
+    // transform: translate(0%, 0%);
+    z-index: 2;
+    background:transparent;
+  //   linear-gradient(
+  //   50deg,
+  //   rgba(255, 255, 255, 0.4) 12%,
+  //   rgba(255, 255, 255, 0.1) 77%
+  // );
+  // background-blend-mode: ;
+  box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  }
+
+   //mat card
+   .example-card3 {
+    max-width: 8vw;
+height:10vw;    // position: absolute;
+    color:white;
+    // top: 65%;
+    // left: 30%;
+    // transform: translate(0%, 0%);
+    z-index: 2;
+    background:transparent;
+  //   linear-gradient(
+  //   50deg,
+  //   rgba(255, 255, 255, 0.4) 12%,
+  //   rgba(255, 255, 255, 0.1) 77%
+  // );
+  // background-blend-mode: ;
+  box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  }
+
+   //mat card
+   .example-card4 {
+    max-width: 100px;
+height:120px;    // position: absolute;
+    color:white;
+    // top: 65%;
+    // left: 20%;
+    // transform: translate(0%, 0%);
+    z-index: 2;
+    background:transparent;
+  //    linear-gradient(
+  //   50deg,
+  //   rgba(255, 255, 255, 0.4) 12%,
+  //   rgba(255, 255, 255, 0.1) 77%
+  // );
+  // background-blend-mode: ;
+  // box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+  // backdrop-filter: blur(5px);
+  // -webkit-backdrop-filter: blur(5px);
+  }
+  //...................?????????
+  .card {
+    position: absolute;
+    top: 34%;
+    right: 3%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    // transform: translate(0%, 0%);
+    z-index: 2;
+    width: 30vw;
+    height: 20vw;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-20px);
+  }
+
+  .card::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    // background: linear-gradient(45deg, #ffbc00, #ff0058);
+    border-radius: 1.2em;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    // background: linear-gradient(45deg, #ffbc00, #ff0058);
+    filter: blur(30px);
+  }
+
+  .card span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    // background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    border-radius: 1em;
+  }
+
+  .card span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    // background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .card .content {
+    position: relative;
+    padding: 10px;
+    z-index: 10;
+    width: 100%;
+    font-family: 'Lemonada';
+    line-height: 4vh;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-weight: 200;
+    font-size: em;
+  }
+  // hero section
+
+  .overlay-text {
+    font-size: larger;
+    background:#d802d8;
+    color:red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Adjust the z-index to make it appear above the background */
+  }
+  ////./////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /// first tooltip in the section contatiner 1
+  .tooltip1{
+    position: absolute;
+    // width: 100px;
+    // height: 100px;
+    // background-color: #ff0058;
+    // border-radius: 50%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // font-size: 1.5em;
+    // color: white;
+    // font-weight: 800;
+    z-index: 2;
+  }
+
+  /* This is an example, feel free to delete this code */
+.tooltip-container {
+  position: absolute;
+  top:120%;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  /*padding: 0.7em 1.8em;*/
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.tooltip-container .borde-back {
+  width: 60px;
+  height: 60px;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.tooltip-container .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  top: -2;
+  left: -45px; /* Altere a posição inicial para a esquerda, fora da tela */
+  transform: translateX(
+    -32%
+  ); /* Usando translateX para controlar a transição da esquerda para a direita */
+  width: 160px;
+  height: 52px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s;
+  border-radius: 50px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 16px;
+  color: #fff;
+  // color: #1e0606;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 800px;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  height: 0.6em;
+  width: 0.6em;
+  right: -0.2em; /* Mude para a direita */
+  top: 50%; /* Altere o topo para o meio da tooltip */
+  transform: translateY(-50%) rotate(45deg); /* Use translateY para centralizar verticalmente */
+  background: var(--background);
+}
+
+.tooltip-container:hover .tooltip {
+  left: 100%; /* Altere para a posição desejada (a direita) */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: -10;
+}
+.tooltip-container:hover {
+  transform: translateX(-50px);
+  transition: 0.5s linear;
+}
+
+  ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /////////
+  .container2{
+
+    width:100vw;
+    height:100vh;
+    // background-color: #212121;
+    background: #3E1E68;
+    box-shadow:  20px 20px 32px #351a58,
+                 -20px -20px 32px #472378;
+
+    display:flex;
+    align-items: center;
+    justify-content:space-evenly;
+   flex-direction: column ;
+   gap:15%;
+   padding:3%;
+   flex-grow: 1;
+  }
+  .p1{
+    background-color: rgb(40, 40, 221);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+    height:10%;
+    font-size:2vw;
+
+    color:white;
+    text-align: center;
+  }
+  .p2{
+    font-size: 5vw;
+    width: 70%;
+    height: 10%;
+    color:white;
+
+  }
+  .p3{
+    color:white;
+    text-align: center;
+    font-size: 1.5vw;
+
+  }
+
+  /* This is an example, feel free to delete this code */
+  .tooltip-container2 {
+    // position: absolute;
+    // top:120%;
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 17px;
+    /*padding: 0.7em 1.8em;*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .tooltip-container2 .borde-back {
+    width: 60px;
+    height: 60px;
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+
+  .tooltip-container2 .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+    cursor: pointer;
+  }
+
+  .tooltip {
+    position: absolute;
+    top: -2;
+    left: -45px; /* Altere a posição inicial para a esquerda, fora da tela */
+    transform: translateX(
+      -32%
+    ); /* Usando translateX para controlar a transição da esquerda para a direita */
+    width: 160px;
+    height: 52px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s;
+    border-radius: 50px;
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 16px;
+    color: #fff;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 800px;
+  }
+
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 0.6em;
+    width: 0.6em;
+    right: -0.2em; /* Mude para a direita */
+    top: 50%; /* Altere o topo para o meio da tooltip */
+    transform: translateY(-50%) rotate(45deg); /* Use translateY para centralizar verticalmente */
+    background: var(--background);
+  }
+
+  .tooltip-container2:hover .tooltip {
+    left: 100%; /* Altere para a posição desejada (a direita) */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: -10;
+  }
+  .tooltip-container2:hover {
+    transform: translateX(-50px);
+    transition: 0.5s linear;
+  }
+ ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /////////
+  .container3{
+    width:100vw;
+    height:100vh;
+    // background-color: #6948488e;
+    background: linear-gradient(145deg, #1e1e1e, #232323);
+    // box-shadow:  25px 25px 50px #151515,
+    //              -25px -25px 50px #2d2d2d;
+    // display:block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+
+    .container3 .div1 { grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    gap:10px;
+    flex-direction: column;text-align: left;;
+  padding:10px;}
+.p4{
+  font-size: 2vw;
+}
+.container3 .div2 { grid-area: 1 / 2 / 2 / 3; padding:10px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color:white;
+      line-height: 2.2vw;
+    }
+    .container3 .div3 { grid-area: 2 / 1 / 3 / 3;  padding:10px;
+    // background-color: red;
+     display: flex;
+    align-items: center;color:white;
+    justify-content: center;}
+
+    //;;;;;;;.......>>>>> hover Dowlab i mean drawzer
+
+    .hovercard {
+      width: 60%;
+      height: 100%;
+      border-radius: 4px;
+      background: #212121;
+      display: flex;
+      // align-items: center;
+      // justify-content: center;
+      gap: 5px;
+      padding: .4em;
+    }
+
+    .hovercard p {
+      height: 100%;
+      // width:25vw;
+      flex: 1;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all .5s;
+      background: #212121;
+      border: 1px solid #ff5a91;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hovercard p:hover {
+      flex: 8;
+    }
+
+    .hovercard p span {
+      min-width: 14em;
+      padding: .5em;
+      text-align: center;
+      transform: rotate(-90deg);
+      transition: all .5s;
+      text-transform: uppercase;
+      color: #ff568e;
+      letter-spacing: .1em;
+    }
+
+    .hovercard p:hover span {
+      transform: rotate(0);
+    }
+   ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /////////
+  ///.parent {
+// display: grid;
+// grid-template-columns: repeat(4, 1fr);
+// grid-template-rows: repeat(4, 1fr);
+// grid-column-gap: 0px;
+// grid-row-gap: 0px;
+// }
+
+// .div1 { grid-area: 2 / 1 / 3 / 3; }
+// .div2 { grid-area: 1 / 1 / 2 / 5; }
+// .div3 { grid-area: 2 / 3 / 3 / 5; }
+// .div4 { grid-area: 3 / 1 / 5 / 5; }
+  ///
+  ///
+  ///
+  ///
+  .container4{
+    width:100vw;
+    height:100vh;
+    // background-color: #e38181;
+    // background: #e7e7e7;
+    background: linear-gradient(145deg, #670b91, #7a0dac);
+    // box-shadow:  20px 20px 32px #351a58,
+                //  -20px -20px 32px #472378;
+    display:block;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+
+   .container4 .div1 {
+    color:#ffffff;
+    grid-area: 1 / 1 / 2 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+   .container4 .div2 {
+    color:#ebebeb;
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    flex-direction: column;text-align: left;;
+  padding:10px;}
+   .container4 .div3 { grid-area: 2 / 3 / 3 / 5;
+    color:#ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    flex-direction: column;text-align: left;;
+  padding:10px;}
+
+   .container4 .div4 {
+
+// background-color: #d802d8;
+    grid-area: 3 / 1 / 5 / 5;
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap:10px;
+
+    text-align: left;;
+  padding:10px;}
+
+// this is the cards in the container 4
+
+.blackCard {
+  width: 15%;
+  height: 100%;
+  // height: 254px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.blackCard h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.blackCard::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 20s linear infinite;
+  transition: all 0.3s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.blackCard::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  ;
+  inset: 5px;
+  border-radius: 15px;
+}
+/* .blackCard:hover:before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  animation: rotBGimg 3.5s linear infinite;
+} */
+
+
+
+   ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /////////
+  .container5{
+    width:100vw;
+    height:200vh;
+    background-color: #342b2b;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+
+    .container5 .div1 { grid-area: 1 / 1 / 3 / 5;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+
+      // width:40%;
+      // font-size: 7vw;
+
+    }
+    //>>>>>>>>tooltip for div 1 in containter 5;
+    .tooltip-container3 {
+      height: 70px;
+      width: 110px;
+      border-radius: 5px;
+      background-color: #fff;
+      background-image: linear-gradient(
+        to left bottom,
+        #f2f5f8,
+        #ecf1f2,
+        #e7eceb,
+        #e3e7e4,
+        #e1e2de
+      );
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.151);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .tooltip-container3::before {
+      position: absolute;
+      content: "";
+      top: -50%;
+      clip-path: polygon(50% 0, 0 100%, 100% 100%);
+      border-radius: 5px;
+      background-color: fff;
+      background-image: linear-gradient(
+        to left bottom,
+        #f2f5f8,
+        #e4eaec,
+        #d8dfde,
+        #cdd3cf,
+        #c5c7c1
+      );
+      width: 100%;
+      height: 50%;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(-150deg) translateY(-110%);
+      transition: transform 0.3s ease;
+    }
+
+    .tooltip-container3 .text3 {
+      color: rgb(32, 30, 30);
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    .tooltip3 {
+      position: absolute;
+      top: -20px;
+      opacity: 0;
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, white 1px),
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, white 1px),
+        linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, white 1px),
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, white 1px),
+        linear-gradient(white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
+        linear-gradient(-90deg, #aaa 1px, white 1px),
+        linear-gradient(-90deg, white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
+        linear-gradient(#aaa 1px, white 1px), #f2f2f2;
+      background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
+        80px 80px, 80px 80px;
+      padding: 5px 10px;
+      border: 1px solid rgb(206, 204, 204);
+
+      height: 70px;
+      width: 110px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.2s;
+      pointer-events: none;
+      letter-spacing: 0.5px;
+      font-size: 18px;
+      font-weight: 600;
+      text-shadow: 10px salmon;
+    }
+    .tooltip-container3:hover {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .tooltip-container3:hover::before {
+      transform: rotateY(0);
+      background-image: none;
+      background-color: white;
+    }
+
+    .tooltip-container3:hover .tooltip3 {
+      top: -90px;
+      opacity: 1;
+      transition-duration: 0.3s;
+    }
+
+
+  ///  >>>>>>>>>>>>>>>>>>>
+    .container5 .div2 { grid-area: 3 / 1 / 5 / 5;
+background-color: rgb(255, 255, 255);
+display:flex;
+flex-direction: row;
+justify-content: space-evenly;
+flex-wrap: wrap
+;
+
+    }
+
+//??????????????>>>>>>>> this part is the sparking card
+.blackCard2 {
+  width: 20%;
+  max-width: 300px;
+  min-width: 100px;
+  height: 45%;
+  background-color: #292929;
+  // background-color: #e8dbdb;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  background: linear-gradient(90deg, #7eaaff 0%, #ff48fb 40%, rgba(0, 0, 0, 0.28) 60%);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.icon svg {
+  fill: white;
+}
+
+.blackCard2 .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.blackCard2 .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.blackCard2:hover {
+  height: 270px;
+}
+
+.blackCard2:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+.blackCard2:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.blackCard2:hover .icon svg path {
+  fill: url('#gradientColor');
+  transition: all 0.3s ease;
+}
+   ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /////////
+  .container6{
+    width:100vw;
+    height:100vh;
+    background-color: #fcfbfb;
+    display:block;
+  }
+
+.footer{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center
+  ;
+  flex-direction: row;
+}

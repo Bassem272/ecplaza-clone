@@ -1,3 +1,6 @@
+
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 import { RegisterService } from './../../services/register.service';
 import {
   FormBuilder,
@@ -49,7 +52,7 @@ export class RegisterComponent implements OnInit {
 
   resolved(captchaResponse: string) {
     this.captcha = captchaResponse;
-    console.log('resolved witht the response' + captchaResponse);
+    // console.log('resolved witht the response' + captchaResponse);
     this.isCaptchaClicked = true;
   }
 
@@ -240,4 +243,15 @@ export class RegisterComponent implements OnInit {
     }
     return false;
   }
+
+
+  showLoader: boolean = false;
+  signUp() {
+    this.showLoader = true;
+    setTimeout(() => {
+      this.showLoader = false;
+    }
+    , 3000);
+  }
+
 }

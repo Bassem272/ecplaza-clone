@@ -1,3 +1,5 @@
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 import {
   NgModule,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -35,11 +37,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { Register2Component } from './register2/register2.component';
 import { Register3Component } from './register3/register3.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { LoginComponent } from './login/login.component';
 
 // import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input';
 
 @NgModule({
-  declarations: [RegisterComponent, Register2Component, Register3Component],
+  declarations: [RegisterComponent, Register2Component, Register3Component, LoginComponent],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
@@ -50,7 +53,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
     MatFormFieldModule,
     MatCardModule,
     RecaptchaModule,
-
+    MatProgressBarModule ,
     MatCheckboxModule,
     ReactiveFormsModule,
     HttpClientModule,
