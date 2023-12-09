@@ -1,6 +1,6 @@
 
-# EcplazaClone
-###In this project, i built a landing page, registeration page and login page. The registeration and landing page were copmletely built with angular.
+# EcplazaClone 
+### In this project, a landing page, registeration page and login page were developed. The registeration and landing page were copmletely built with angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
